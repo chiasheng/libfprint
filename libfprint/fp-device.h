@@ -236,6 +236,14 @@ void fp_device_close (FpDevice           *device,
                       GAsyncReadyCallback callback,
                       gpointer            user_data);
 
+void fp_device_suspend (FpDevice           *device,
+                        GAsyncReadyCallback callback,
+                        gpointer            user_data);
+
+void fp_device_resume (FpDevice           *device,
+                       GAsyncReadyCallback callback,
+                       gpointer            user_data);
+
 void fp_device_enroll (FpDevice           *device,
                        FpPrint            *template_print,
                        GCancellable       *cancellable,
@@ -291,6 +299,12 @@ gboolean fp_device_open_finish (FpDevice     *device,
 gboolean fp_device_close_finish (FpDevice     *device,
                                  GAsyncResult *result,
                                  GError      **error);
+gboolean fp_device_suspend_finish (FpDevice     *device,
+                                   GAsyncResult *result,
+                                   GError      **error);
+gboolean fp_device_resume_finish (FpDevice     *device,
+                                  GAsyncResult *result,
+                                  GError      **error);
 FpPrint *fp_device_enroll_finish (FpDevice     *device,
                                   GAsyncResult *result,
                                   GError      **error);
